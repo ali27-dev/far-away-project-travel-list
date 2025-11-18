@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Far Away Packing List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application built while following **Jonas Schmedtmann's React course on Udemy**. It is a beginner‑friendly project that teaches core React concepts through a practical, real‑world example.
 
-## Available Scripts
+## 📦 Project Overview
 
-In the project directory, you can run:
+The **Far Away App** helps users create and manage a packing list for travelling. The goal is to practice essential React skills while building a small but complete application.
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Add items to a packing list (with quantity and name)
+- Mark items as packed/unpacked
+- Delete individual items
+- Clear the entire list
+- Sort items by different options
+- See statistics about packing progress
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 What I Learned
 
-### `npm test`
+While building this project, I practiced:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React components
+- Props and state management
+- Controlled forms
+- Conditional rendering
+- Derived state
+- Lifting state up
+- Passing handler functions as props
+- Rendering lists using `map()`
+- Component organization and folder structure
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React (Vite / CRA depending on setup)**
+- **JavaScript (ES6+)**
+- **CSS**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure (Example)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+ ├── components/
+ │    ├── Logo.jsx
+ │    ├── Form.jsx
+ │    ├── PackingList.jsx
+ │    ├── Item.jsx
+ │    ├── Stats.jsx
+ ├── App.jsx
+ ├── index.css
+ └── main.jsx
+```
 
-### `npm run eject`
+## ▶️ How to Run the Project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository
+2. Install dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Start the development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+## 🎯 Future Improvements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Add local storage
+- Add dark mode
+- Add animations
+- Add categories for items
+- Add user authentication
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### ✨ Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Project created while learning from **Jonas Schmedtmann's React Course** on Udemy.

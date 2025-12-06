@@ -21,11 +21,11 @@ export default function App() {
     </div>
   );
 }
-
+// LOGO-Component
 function Logo() {
   return <h1>🏝️ far away 🧳</h1>;
 }
-
+// Form-Component
 function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
   const [quantity, setQunatity] = useState(1);
@@ -73,7 +73,7 @@ function Form({ onAddItems }) {
     </form>
   );
 }
-
+// Packing-Component
 function PackingList({ items }) {
   return (
     <div className="list">
@@ -85,6 +85,7 @@ function PackingList({ items }) {
     </div>
   );
 }
+// Item-Component
 function Item({ itemObj }) {
   return (
     <li style={itemObj.packed ? { textDecoration: "line-through" } : {}}>
@@ -96,7 +97,7 @@ function Item({ itemObj }) {
     </li>
   );
 }
-
+// State-Component
 function Stats() {
   return (
     <footer className="stats">

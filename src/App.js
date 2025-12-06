@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { preconnect } from "react-dom";
 
 const initialItems = [
   { id: 1, description: "Passports", quantity: 2, packed: true },
@@ -31,7 +32,7 @@ export default function App() {
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 }
@@ -121,10 +122,19 @@ function Item({ itemObj, onAddItems, onToggleItem }) {
   );
 }
 // State-Component
-function Stats() {
+function Stats({ items }) {
+  const totalItems = items.length;
+  const packedItems = items.filter((item) => item.packed).length;
+  const percentage = (packedItems / totalItems) * 100;
   return (
     <footer className="stats">
-      <em>💼 You have X items on your list, and you already packed X (X%)</em>
+      <em>
+        {percentage === 100
+          ? "You got everthing! Ready to go ✈️"
+          : ` 💼 You have ${totalItems} items on your list, and you already packed
+        ${packedItems}(${percentage}%)
+      }`}
+      </em>
     </footer>
   );
 }

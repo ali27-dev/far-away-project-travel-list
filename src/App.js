@@ -123,6 +123,13 @@ function Item({ itemObj, onAddItems, onToggleItem }) {
 }
 // State-Component
 function Stats({ items }) {
+  if (!items.length)
+    return (
+      <p className="stats">
+        <em>Start adding some iteams to your packing list 🚀</em>
+      </p>
+    );
+
   const totalItems = items.length;
   const packedItems = items.filter((item) => item.packed).length;
   const percentage = (packedItems / totalItems) * 100;

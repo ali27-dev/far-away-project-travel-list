@@ -9,13 +9,15 @@ const initialItems = [
 export default function App() {
   const [items, setItems] = useState([]);
 
+  // Adding Item
   function handleAddItem(item) {
     setItems((items) => [...items, item]);
   }
+  // Delete Single Item
   function handleDeleteItem(id) {
     setItems(items.filter((item) => item.id !== id));
   }
-
+  // For Packed or Unpacked
   function handleToggleItem(id) {
     setItems((items) =>
       items.map((item) =>
@@ -23,6 +25,10 @@ export default function App() {
       )
     );
   }
+  function handleClearList() {
+    setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -31,6 +37,7 @@ export default function App() {
         items={items}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
       />
       <Stats items={items} />
     </div>
@@ -89,8 +96,9 @@ function Form({ onAddItems }) {
   );
 }
 // Packing-Component
-function PackingList({ items, onDeleteItem, onToggleItem }) {
+function PackingList({ items, onDeleteItem, onToggleItem, onClearList }) {
   const [sortBy, setSortBy] = useState("input");
+
   let sortedItems;
 
   if (sortBy === "input") sortedItems = items;
@@ -110,7 +118,7 @@ function PackingList({ items, onDeleteItem, onToggleItem }) {
         {sortedItems.map((item) => (
           <Item
             itemObj={item}
-            onAddItems={onDeleteItem}
+            onDeleteItem={onDeleteItem}
             onToggleItem={onToggleItem}
             key={item.id}
           />
@@ -123,12 +131,13 @@ function PackingList({ items, onDeleteItem, onToggleItem }) {
           <option value="description">sort by description</option>
           <option value="packed">sort by packed item</option>
         </select>
+        <button onClick={onClearList}>Clear List</button>
       </div>
     </div>
   );
 }
 // Item-Component
-function Item({ itemObj, onAddItems, onToggleItem }) {
+function Item({ itemObj, onAddItems, onDeleteItem, onToggleItem }) {
   return (
     <li style={itemObj.packed ? { textDecoration: "line-through" } : {}}>
       <input
@@ -139,7 +148,7 @@ function Item({ itemObj, onAddItems, onToggleItem }) {
       <span>
         {itemObj.quantity} {itemObj.description}
       </span>
-      <button onClick={() => onAddItems(itemObj.id)}>❌</button>
+      <button onClick={() => onDeleteItem(itemObj.id)}>❌</button>
     </li>
   );
 }
